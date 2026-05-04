@@ -6,9 +6,12 @@ public class BenchMarking{
             long inicio = System.nanoTime();
             funcion.call();
             long fin = System.nanoTime();
+            double duracion = fin - inicio;
+            Results resultados = new Results(duracion,name,sample);
+            return resultados;
 
         }catch (Exception e){
-
+            throw new RuntimeException("Error en la funcion");
         }
     }
 }
